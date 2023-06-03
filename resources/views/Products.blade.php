@@ -12,18 +12,25 @@
       <div class="container pt-5">
         <div class="row">
             <div class="col-12">
+                @foreach ($product as $products )
+
                 <div class="col-4">
 
                 <div class="card">
                     <div class="card-head text-center">
-                        <h2>product-title</h2>
+
+                        <h2>product tilte:{{$products->name}}</h2>
                     </div>
+                    {{-- src="{{ asset('product_image/'.$products->image) }}" --}}
                     <div class="card-body">
-                        <img src="" alt="">
-                        <h3>price</h3>
+                        <img  alt="" style="height: 100px;width:100px" src="{{ asset('product_image/php3F56.tmp') }}">
+                        <h3>price:${{$products->price}}</h3>
+                        <a href="">edit</a>
                     </div>
                 </div>
                 </div>
+                @endforeach
+
             </div>
         </div>
         <hr>

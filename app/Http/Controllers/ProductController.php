@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function ShowProduct(){
-        return view('Products');
+        $product=Product::all();
+        return view('Products',compact('product'));
     }
     public function CreateProduct(){
         $this->validate(request(),[
