@@ -25,7 +25,7 @@
                     <div class="card-body">
                         <img  alt="" style="height: 100px;width:100px" src="{{ asset('product_image/php3F56.tmp') }}">
                         <h3>price:${{$products->price}}</h3>
-                        <a href="">edit</a>
+                        {{-- <a href="{{route('editProduct'$products->id)}}">edit</a> --}}
                     </div>
                 </div>
                 </div>

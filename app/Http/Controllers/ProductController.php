@@ -29,4 +29,10 @@ class ProductController extends Controller
         ]);
         return redirect()->back();
     }
+    public function editProduct($id){
+        $product=Product::find($id);
+        $product::update([
+          
+        ]);
+    }
 }
