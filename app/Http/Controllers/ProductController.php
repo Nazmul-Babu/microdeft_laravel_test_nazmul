@@ -14,15 +14,18 @@ class ProductController extends Controller
         $this->validate(request(),[
             'name'=>'required',
             'price'=>'required',
-            'image'=>'required|image',
+            'image'=>'required',
         ]);
 
         $imageExtension=request()->file('image')->extension();
         $imageName='product'.'_'.uniqid().'_'.$imageExtension;
-        request()->file('image')->move('product_image')
+        request()->file('image')->move('product_image');
         Product::create([
             'name'=>request('name'),
+            'image'=>$imageName,
+            'price'=>request('price'),
 
-        ])
+        ]);
+        return redirect()->back();
     }
 }

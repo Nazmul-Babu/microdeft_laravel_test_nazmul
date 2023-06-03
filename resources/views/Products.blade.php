@@ -35,7 +35,7 @@
             @csrf
             <input type="text" name="name" class="form-control" placeholder="product name"><br>
             <input type="number" name="price" class="form-control" placeholder="product price"><br>
-            <input type="file" name="price" ><br><br><br>
+            <input type="file" name="image" ><br><br><br>
             <input type="submit" class="btn btn-success btn-block" value="create" >
            </form>
 
