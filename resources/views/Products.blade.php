@@ -10,30 +10,8 @@
 </head>
 <body>
       <div class="container pt-5">
-        <div class="row">
-            <div class="col-12">
-                @foreach ($product as $products )
 
-                <div class="col-4">
 
-                <div class="card">
-                    <div class="card-head text-center">
-
-                        <h2>product tilte:{{$products->name}}</h2>
-                    </div>
-                    {{-- src="{{ asset('product_image/'.$products->image) }}" --}}
-                    <div class="card-body">
-                        <img  alt="" style="height: 100px;width:100px" src="{{ asset('product_image/php3F56.tmp') }}">
-                        <h3>price:${{$products->price}}</h3>
-                        {{-- <a href="{{route('editProduct'$products->id)}}">edit</a> --}}
-                    </div>
-                </div>
-                </div>
-                @endforeach
-
-            </div>
-        </div>
-        <hr>
         {{-- create product --}}
         <div class="row">
             @include('errors')
@@ -48,5 +26,23 @@
 
         </div>
       </div>
+
+      </div>
+      {{-- 2nd  --}}
+    <section>
+        <div class="container pt-5">
+            <div class="row">
+              @foreach ($product as $pro )
+              <div class="col-4">
+                <div class="card">
+                    <div>{{$pro->name}}</div>
+                    <div><img style="height: 200px;width:100%" src="{{asset('product_image/'.$pro->image)}}" alt=""></div>
+                </div>
+              </div>
+              @endforeach
+
+              </div>
+          </div>
+    </section>
 </body>
 </html>

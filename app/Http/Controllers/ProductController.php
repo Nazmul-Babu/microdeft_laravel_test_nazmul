@@ -20,7 +20,7 @@ class ProductController extends Controller
 
         $imageExtension=request()->file('image')->extension();
         $imageName='product'.'_'.uniqid().'_'.$imageExtension;
-        request()->file('image')->move('product_image');
+        request()->file('image')->move('product_image',$imageName);
         Product::create([
             'name'=>request('name'),
             'image'=>$imageName,
@@ -32,7 +32,7 @@ class ProductController extends Controller
     public function editProduct($id){
         $product=Product::find($id);
         $product::update([
-          
+
         ]);
     }
 }
